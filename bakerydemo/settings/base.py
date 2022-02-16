@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     'wagtailaccessibility',
+    "wagtail_localize",
+    "wagtail_localize.locales",
 ]
 
 MIDDLEWARE = [
@@ -83,7 +85,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    'django.middleware.locale.LocaleMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 
 ]
@@ -150,6 +152,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
+
+# For wagtail-localize
+WAGTAIL_I18N_ENABLED = True
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ("en", "English"),
+    ("es", "Spanish"),
+    ("fr", "French"),
+]
 
 USE_TZ = True
 
